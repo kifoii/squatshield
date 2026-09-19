@@ -1,18 +1,15 @@
-# SquatShield
+SquatShield
+Minecraft 26.2 的 SquatShield Fabric 移植版。
 
-Minecraft 26.2 Fabric port of SquatShield.
+功能
 
-## Features
-- Hold Sneak to raise a shield automatically.
-- Offhand shield is preferred over main hand.
-- Normal right-click shield use is suppressed so Sneak controls shield use.
+按住潜行键自动举起盾牌。
+屏蔽正常的右键举盾，以便由潜行键控制盾牌的使用。
 
-## Target
-- Minecraft 26.2
-- Fabric Loader 0.19.5+
-- Fabric API 0.161.0+26.2
-- Java 25+
-- Fabric Loom 1.17-SNAPSHOT
-- Gradle 9.5.1
-
-The 26.x port uses Mojang mappings; Yarn mappings are no longer used for Minecraft 26.1+.
+目标
+Minecraft 26.2
+Fabric Loader 0.19.5+
+Fabric API 0.161.0+26.2
+Java 25+
+Fabric Loom 1.17-SNAPSHOT
+Gradle 9.5.1
