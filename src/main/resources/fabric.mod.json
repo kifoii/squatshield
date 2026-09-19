@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "squatshield",
+  "version": "${version}",
+  "name": "SquatShield",
+  "description": "Automatically uses a shield while sneaking.",
+  "authors": ["M0onesy"],
+  "license": "CC0-1.0",
+  "icon": "assets/squatshield/icon.png",
+  "environment": "client",
+  "mixins": ["squatshield.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~26.2",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}
