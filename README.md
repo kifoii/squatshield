@@ -1,13 +1,13 @@
-#SquatShield
+# SquatShield
 
 Minecraft 26.2 的 SquatShield Fabric 移植版。
 
-##功能
+## 功能
 
 按住潜行键自动举起盾牌。
 屏蔽正常的右键举盾，以便由潜行键控制盾牌的使用。
 
-##目标
+## 目标
 
 Minecraft 26.2
 
