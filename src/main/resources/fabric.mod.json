@@ -3,11 +3,18 @@
   "id": "squatshield",
   "version": "${version}",
   "name": "SquatShield",
-  "description": "Automatically uses a shield while sneaking.",
-  "authors": ["M0onesy"],
+  "description": "Hold sneak to raise a shield; normal right-click shield use is suppressed.",
+  "authors": ["Me!"],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/M0onesy/SquatShield"
+  },
   "license": "CC0-1.0",
   "icon": "assets/squatshield/icon.png",
   "environment": "client",
+  "entrypoints": {
+    "main": ["com.squatshield.SquatShield"]
+  },
   "mixins": ["squatshield.mixins.json"],
   "depends": {
     "fabricloader": ">=0.19.5",
