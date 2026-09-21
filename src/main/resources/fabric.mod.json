@@ -10,7 +10,6 @@
     "sources": "https://github.com/M0onesy/SquatShield"
   },
   "license": "CC0-1.0",
-  "icon": "assets/squatshield/icon.png",
   "environment": "client",
   "entrypoints": {
     "main": ["com.squatshield.SquatShield"],
