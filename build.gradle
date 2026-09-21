@@ -58,3 +58,18 @@ publishing {
     }
     repositories { }
 }
+
+tasks.register("generateModIcon") {
+    def output = layout.buildDirectory.file("generated/resources/main/assets/squatshield/icon.png")
+    inputs.file("src/main/resources/assets/squatshield/icon.png.b64")
+    outputs.file(output)
+    doLast {
+        def target = output.get().asFile
+        target.parentFile.mkdirs()
+        def encoded = file("src/main/resources/assets/squatshield/icon.png.b64").getText("UTF-8").replaceAll("\\s", "")
+        target.bytes = java.util.Base64.decoder.decode(encoded)
+    }
+}
+
+processResources.dependsOn(tasks.named("generateModIcon"))
+sourceSets.main.resources.srcDir(layout.buildDirectory.dir("generated/resources/main"))
