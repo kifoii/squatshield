@@ -13,7 +13,8 @@
   "icon": "assets/squatshield/icon.png",
   "environment": "client",
   "entrypoints": {
-    "main": ["com.squatshield.SquatShield"]
+    "main": ["com.squatshield.SquatShield"],
+    "client": ["com.squatshield.SquatShieldClient"]
   },
   "mixins": ["squatshield.mixins.json"],
   "depends": {
