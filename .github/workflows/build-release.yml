@@ -40,9 +40,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Build mod
-        run: |
-          chmod +x gradlew
-          ./gradlew build --no-daemon
+        run: sh ./gradlew build --no-daemon
 
       - name: Show build outputs
         run: ls -lah build/libs
