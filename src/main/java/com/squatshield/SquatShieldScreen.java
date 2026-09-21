@@ -1,7 +1,5 @@
 package com.squatshield;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -65,16 +63,6 @@ public class SquatShieldScreen extends Screen {
 
     @Override
     public void onClose() {
-        Minecraft.getInstance().setScreen(parent);
-    }
-
-    @Override
-    public void render(GuiGraphics graphics, int mouseX, int mouseY, float delta) {
-        this.renderBackground(graphics, mouseX, mouseY, delta);
-        graphics.drawCenteredString(this.font, this.title, this.width / 2, this.height / 2 - 105, 0xFFFFFF);
-        graphics.drawCenteredString(this.font,
-            Component.literal("Hold Shift to raise your shield"),
-            this.width / 2, this.height / 2 + 45, 0xA0A0A0);
-        super.render(graphics, mouseX, mouseY, delta);
+        this.minecraft.gui.setScreen(this.parent);
     }
 }
