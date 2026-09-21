@@ -1,5 +1,6 @@
 package com.squatshield.mixin.client;
 
+import com.squatshield.SquatShieldConfig;
 import com.squatshield.input.SneakShieldContext;
 import net.minecraft.client.multiplayer.MultiPlayerGameMode;
 import net.minecraft.world.InteractionHand;
@@ -16,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class ClientPlayerInteractionManagerMixin {
     @Inject(method = "useItem", at = @At("HEAD"), cancellable = true)
     private void squatshield$blockRightClickShield(Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResult> cir) {
-        if (SneakShieldContext.isSneakTriggered()) return;
+        if (SneakShieldContext.isSneakTriggered() || !SquatShieldConfig.enabled || !SquatShieldConfig.blockManualShieldUse) return;
 
         ItemStack stack = player.getItemInHand(hand);
         if (stack.getItem() instanceof ShieldItem) cir.setReturnValue(InteractionResult.PASS);
