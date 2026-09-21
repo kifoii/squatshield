@@ -1,5 +1,6 @@
 package com.squatshield.mixin.client;
 
+import com.squatshield.SquatShieldConfig;
 import com.squatshield.input.SneakShieldContext;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Options;
@@ -26,7 +27,7 @@ public class MinecraftClientMixin {
 
     @Inject(method = "handleKeybinds", at = @At("TAIL"))
     private void squatshield$triggerShieldFromSneak(CallbackInfo ci) {
-        if (this.player == null || !this.options.keyShift.isDown() || this.player.isUsingItem()) return;
+        if (!SquatShieldConfig.enabled || this.player == null || !this.options.keyShift.isDown() || this.player.isUsingItem()) return;
 
         InteractionHand hand = this.squatshield$getPreferredShieldHand();
         if (hand == null) return;
@@ -48,7 +49,7 @@ public class MinecraftClientMixin {
         at = @At(value = "INVOKE", target = "Lnet/minecraft/client/multiplayer/MultiPlayerGameMode;releaseUsingItem(Lnet/minecraft/world/entity/player/Player;)V")
     )
     private void squatshield$keepShieldUsingWhileSneaking(MultiPlayerGameMode gameMode, Player player) {
-        if (this.options.keyShift.isDown()
+        if (SquatShieldConfig.enabled && this.options.keyShift.isDown()
             && player.isUsingItem()
             && player.getUseItem().getItem() instanceof ShieldItem) {
             return;
