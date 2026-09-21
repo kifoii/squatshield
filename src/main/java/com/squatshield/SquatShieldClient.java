@@ -5,6 +5,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
 import net.minecraft.client.KeyMapping;
+import net.minecraft.resources.Identifier;
 import org.lwjgl.glfw.GLFW;
 
 public class SquatShieldClient implements ClientModInitializer {
@@ -13,7 +14,7 @@ public class SquatShieldClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         KeyMapping.Category category = KeyMapping.Category.register(
-            SquatShield.MOD_ID + ":main"
+            Identifier.fromNamespaceAndPath(SquatShield.MOD_ID, "main")
         );
 
         openMenu = KeyMappingHelper.registerKeyMapping(new KeyMapping(
