@@ -3,7 +3,7 @@
   "id": "squatshield",
   "version": "${version}",
   "name": "SquatShield",
-  "description": "Hold sneak to raise a shield; normal right-click shield use is suppressed.",
+  "description": "潜行时自动举盾。",
   "authors": ["Me!"],
   "contact": {
     "homepage": "https://fabricmc.net/",
@@ -14,13 +14,19 @@
   "environment": "client",
   "entrypoints": {
     "main": ["com.squatshield.SquatShield"],
-    "client": ["com.squatshield.SquatShieldClient"]
+    "modmenu": ["com.squatshield.SquatShieldModMenu"]
   },
   "mixins": ["squatshield.mixins.json"],
   "depends": {
     "fabricloader": ">=0.19.5",
     "minecraft": "~26.2",
     "java": ">=25",
-    "fabric-api": "*"
+    "fabric-api": "*",
+    "modmenu": ">=20.0.0"
+  },
+  "custom": {
+    "modmenu": {
+      "update_checker": false
+    }
   }
 }
