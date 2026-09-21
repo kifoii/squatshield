@@ -4,6 +4,8 @@ on:
   release:
     types: [published]
   push:
+    branches:
+      - main
     tags:
       - 'v*'
   workflow_dispatch:
@@ -48,7 +50,7 @@ jobs:
       - name: Upload JAR to GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
-          TAG: ${{ github.event.inputs.tag || github.event.release.tag_name || github.ref_name }}
+          TAG: ${{ github.event.inputs.tag || github.event.release.tag_name || (github.ref_name == 'main' && 'Fabric' || github.ref_name) }}
         run: |
           JAR="$(find build/libs -maxdepth 1 -type f -name 'squatshield-*.jar' ! -name '*-sources.jar' ! -name '*-dev.jar' | head -n 1)"
           if [ -z "$JAR" ]; then
